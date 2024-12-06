@@ -27,6 +27,7 @@ alias mp="~/.pyenv/shims/python3.10 ~/code/util/serial-mavproxy.py"
 alias gpu_disable="sudo pmset -a gpuswitch 0"
 alias gpu_enable="sudo pmset -a gpuswitch 2"
 alias di="say -v Alice"
+alias ls="eza"
 
 # zsh autocomplete
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
