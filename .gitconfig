@@ -1,0 +1,29 @@
+# This is Git's per-user configuration file.
+[user]
+	email = luca@pescante.it
+	name = Luca Pescante
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[core]
+    autocrlf = false
+    safecrlf = false
+    eol = crlf
+	editor = nvim
+	pager = delta
+[http]
+	postBuffer = 157286400
+[init]
+	defaultBranch = main
+[alias]
+	st = status
+	co = checkout
+	br = branch
+	cm = commit
+	df = diff
+	lg = log --oneline --graph --decorate --all
+	unstage = reset HEAD --
+	last = log -1 HEAD
