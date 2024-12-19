@@ -36,7 +36,7 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<leader>zig", "<cmd>LspRestart<cr>")
 
--- yanks go in the clipboard if prefixed by the leader key, y works in vim only, <leader>y copies to clipboard.
+-- yanks go in the system clipboard if prefixed by the leader key
 vim.keymap.set('n', '<leader>y', '\"+y')
 vim.keymap.set('v', '<leader>y', '\"+y')
 vim.keymap.set('n', '<leader>Y', '\"+Y')
@@ -52,8 +52,8 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 -- quick navigation
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+-- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+-- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
