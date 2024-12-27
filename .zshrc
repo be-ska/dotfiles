@@ -29,7 +29,7 @@ alias gpu_enable="sudo pmset -b gpuswitch 2"
 alias di="say -v Alice"
 alias ls="eza"
 
-# zsh autocomplete
+# zsh autocomplete (up and down arrows to scroll history)
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
