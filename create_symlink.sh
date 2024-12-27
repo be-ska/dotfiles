@@ -8,6 +8,7 @@ declare -A SYMLINKS=(
     [".tmux.conf"]="$HOME/.tmux.conf"
     ["nvim"]="$HOME/.config/nvim"
     [".zshrc"]="$HOME/.zshrc"
+    ["ghostty"]="$HOME/.config/ghostty"
 )
 
 echo "Creating symlinks from $SOURCE_DIR..."
