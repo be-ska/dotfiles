@@ -1,6 +1,12 @@
-# The syntax is "key = value". The whitespace around the
-# equals doesn't matter.
+# colours
 background = 191724
 foreground = ffffff
+
+# font
 font-family = "VictorMono NFM SemiBold"
 font-size = 14
+
+#icon
+macos-icon = custom-style
+macos-icon-ghost-color = BCBEC4
+macos-icon-screen-color = 1E1F22
