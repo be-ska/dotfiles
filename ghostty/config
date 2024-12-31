@@ -1,6 +1,5 @@
-# colours
-background = 191724
-foreground = ffffff
+# theme
+theme = rose-pine
 
 # font
 font-family = "VictorMono NFM SemiBold"
