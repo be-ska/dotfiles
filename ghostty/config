@@ -4,3 +4,8 @@ theme = rose-pine
 # font
 font-family = "VictorMono NFM SemiBold"
 font-size = 14
+
+# icon (?)
+macos-icon = custom-style
+macos-icon-ghost-color = BCBEC4
+macos-icon-screen-color = 26233A 
