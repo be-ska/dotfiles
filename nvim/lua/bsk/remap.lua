@@ -41,6 +41,10 @@ vim.keymap.set('n', '<leader>y', '\"+y')
 vim.keymap.set('v', '<leader>y', '\"+y')
 vim.keymap.set('n', '<leader>Y', '\"+Y')
 
+-- copy file path to system clipboard
+vim.keymap.set('n', '<leader>yp', [[:let @+ = expand('%p')<CR>]]) -- relative path
+vim.keymap.set('n', '<leader>yP', [[:let @+ = expand('%:p')<CR>]]) -- full path
+
 -- paste from system clipboard
 vim.keymap.set('n', '<leader>p', '\"+p')
 
