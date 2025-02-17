@@ -27,3 +27,7 @@
 	lg = log --oneline --graph --decorate --all
 	unstage = reset HEAD --
 	last = log -1 HEAD
+[delta]
+    dark = true
+    side-by-side = true
+    line-numbers = true
