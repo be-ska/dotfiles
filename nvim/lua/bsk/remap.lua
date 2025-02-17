@@ -40,7 +40,12 @@ vim.keymap.set("n", "<leader>zig", "<cmd>LspRestart<cr>")
 vim.keymap.set('n', '<leader>y', '\"+y')
 vim.keymap.set('v', '<leader>y', '\"+y')
 vim.keymap.set('n', '<leader>Y', '\"+Y')
+
+-- paste from system clipboard
 vim.keymap.set('n', '<leader>p', '\"+p')
+
+-- paste over a selection without yanking
+vim.keymap.set('v', "p", '\"_dp')
 
 -- never enter Ex mode
 vim.keymap.set("n", "Q", "<nop>")
