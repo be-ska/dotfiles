@@ -7,6 +7,9 @@ bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 # zsh touchbar
 source ~/.zsh/zsh-apple-touchbar/zsh-apple-touchbar.zsh
+#
+# homebrew local path
+export PATH=/usr/local/bin:$PATH
 
 # Python pyenv version manager
 export PYENV_ROOT="$HOME/.pyenv"
