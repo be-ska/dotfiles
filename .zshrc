@@ -46,3 +46,9 @@ export PATH=$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin:
 export STM32CubeMX_PATH=/Applications/STMicroelectronics/STM32CubeMX.app/Contents/Resources
 
 eval $(thefuck --alias)
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/luca/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+
