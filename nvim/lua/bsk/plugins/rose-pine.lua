@@ -21,7 +21,7 @@ return {
             },
 
             groups = {
-                border = "muted",
+                border = "love",
                 link = "iris",
                 panel = "surface",
 
