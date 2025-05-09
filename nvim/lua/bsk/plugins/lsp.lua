@@ -1,88 +1,93 @@
 return {
-    "williamboman/mason-lspconfig.nvim",
-    dependencies = {
+    {
+        -- install language servers
         "williamboman/mason.nvim",
-        'neovim/nvim-lspconfig',
-        'hrsh7th/cmp-nvim-lsp',
-        'hrsh7th/nvim-cmp'
+        version = "^1.0.0",
+        config = function()
+            require('mason').setup()
+        end
     },
-    config = function()
-        -- Reserve a space in the gutter
-        -- This will avoid an annoying layout shift in the screen
-        vim.opt.signcolumn = 'yes'
+    {
+        -- autoinstall language servers
+        "williamboman/mason-lspconfig.nvim",
+        version = "^1.0.0",
+        config = function()
+            require('mason-lspconfig').setup({
+                -- Replace the language servers listed here with the ones you want to install
+                ensure_installed = { 'clangd', 'lua_ls', 'ltex', 'lemminx', 'yamlls', 'biome', 'pyright' },
+                handlers = {
+                    function(server_name)
+                        require('lspconfig')[server_name].setup({})
+                    end,
+                },
+            })
+        end
+    },
+    {
+        -- handle communication between LSP and nvim
+        "neovim/nvim-lspconfig",
+        config = function()
+            -- Add cmp_nvim_lsp capabilities settings to lspconfig
+            -- This should be executed before you configure any language server
+            local lspconfig_defaults = require('lspconfig').util.default_config
+            lspconfig_defaults.capabilities = vim.tbl_deep_extend(
+                'force',
+                lspconfig_defaults.capabilities,
+                require('cmp_nvim_lsp').default_capabilities()
+            )
 
-        -- Add cmp_nvim_lsp capabilities settings to lspconfig
-        -- This should be executed before you configure any language server
-        local lspconfig_defaults = require('lspconfig').util.default_config
-        lspconfig_defaults.capabilities = vim.tbl_deep_extend(
-        'force',
-        lspconfig_defaults.capabilities,
-        require('cmp_nvim_lsp').default_capabilities()
-        )
-
-        -- This is where you enable features that only work
-        -- if there is a language server active in the file
-        vim.api.nvim_create_autocmd('LspAttach', {
-            desc = 'LSP actions',
-            callback = function(event)
-                local opts = {buffer = event.buf}
-
-                vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
-                vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
-                vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
-                vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
-                vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
-                vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-                vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
-                vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-                vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
-                vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-                vim.keymap.set('n', 'ge', '<cmd>lua vim.diagnostic.open_float(nil, { focusable = false })<cr>', opts)
-                vim.keymap.set('n', 'gn', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts)
-                vim.keymap.set('n', 'gp', '<cmd>lua vim.diagnostic.goto_prev()<cr>', opts)
-            end,
-        })
-
-        ---
-        -- Mason to autoinstall language servers
-        ---
-        require('mason').setup({})
-        require('mason-lspconfig').setup({
-            -- Replace the language servers listed here 
-            -- with the ones you want to install
-            ensure_installed = {'clangd', 'lua_ls', 'ltex', 'lemminx', 'yamlls', 'biome', 'pyright'},
-            handlers = {
-                function(server_name)
-                    require('lspconfig')[server_name].setup({})
+            -- LspAttach apply keybindings after a language server has attached to a given buffer
+            vim.api.nvim_create_autocmd('LspAttach', {
+                desc = 'LSP actions',
+                callback = function(event)
+                    local opts = { buffer = event.buf }
+                    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+                    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+                    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+                    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+                    vim.keymap.set('n', 'go', vim.lsp.buf.type_definition, opts)
+                    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+                    vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, opts)
+                    vim.keymap.set('n', 'ge', vim.diagnostic.open_float, opts)
+                    vim.keymap.set('n', 'gn', vim.diagnostic.goto_next, opts)
+                    vim.keymap.set('n', 'gp', vim.diagnostic.goto_prev, opts)
                 end,
-            },
-        })
+            })
+        end
+    },
 
-        ---
-        -- Autocompletion config
-        ---
-        local cmp = require('cmp')
+    {
+        -- Use LSP as source for autocompletion
+        'hrsh7th/cmp-nvim-lsp',
+        config = function()
+            -- Reserve a space in the gutter
+            -- This will avoid an annoying layout shift in the screen
+            -- vim.opt.signcolumn = 'yes'
+        end
+    },
 
-        cmp.setup({
-            sources = {
-                {name = 'nvim_lsp'},
-            },
-            mapping = cmp.mapping.preset.insert({
-                -- `Enter` key to confirm completion
-                ['<CR>'] = cmp.mapping.confirm({select = false}),
+    {
+        -- Autocompletion
+        'hrsh7th/nvim-cmp',
+        config = function()
+            local cmp = require('cmp')
 
-                -- Ctrl+Space to trigger completion menu
-                ['<C-Space>'] = cmp.mapping.complete(),
-
-                -- Scroll up and down in the completion documentation
-                ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-                ['<C-d>'] = cmp.mapping.scroll_docs(4),
-            }),
-            snippet = {
-                expand = function(args)
-                    vim.snippet.expand(args.body)
-                end,
-            },
-        })
-    end
+            cmp.setup({
+                -- at least one is required
+                snippet = {
+                    expand = function(args)
+                        vim.snippet.expand(args.body)
+                    end,
+                },
+                sources = {
+                    { name = 'nvim_lsp' },
+                },
+                mapping = cmp.mapping.preset.insert({
+                    ['<C-Space>'] = cmp.mapping.complete(),
+                    ['<C-e>'] = cmp.mapping.abort(),
+                    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+                }),
+            })
+        end
+    }
 }
