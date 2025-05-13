@@ -31,3 +31,6 @@ opt.scrolloff = 8
 opt.signcolumn = "yes"
 
 opt.updatetime = 50
+
+-- load cfilter plugin at startup
+vim.cmd('packadd cfilter')
