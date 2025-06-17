@@ -32,6 +32,14 @@ export GZ_SIM_RESOURCE_PATH=$HOME/code/uav/gz_ws/src/ardupilot_gazebo/models:$HO
 # pio
 export PATH="$PATH:$HOME/.platformio/penv/bin/"
 
+# source .zsh_secrets
+source ~/.zsh_secrets
+
+# variables
+ALIGN_LOGS="/Users/luca/Library/CloudStorage/GoogleDrive-luca@alignmachines.com/.shortcut-targets-by-id/1avRPfwfaWKzqSPMQn_9x6zymX4clPOGE/Pilot Testing 廠機手相關/FlightLog"
+ALIGN_FW="/Users/luca/Library/CloudStorage/GoogleDrive-luca@alignmachines.com/My Drive/Align Software/最新版飛控韌體更新檔案 Flight Controller Firmware"
+
+# aliases
 alias me="MAVExplorer.py"
 alias cd="z"
 alias mp="~/.pyenv/shims/python3.10 ~/code/util/serial-mavproxy.py"
