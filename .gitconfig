@@ -24,7 +24,7 @@
 	br = branch
 	cm = commit
 	df = diff
-	lg = log --oneline --graph --decorate --all
+	lg = log --oneline --graph --decorate 
 	unstage = reset HEAD --
 	last = log -1 HEAD
 [delta]
