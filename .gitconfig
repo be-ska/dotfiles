@@ -31,3 +31,4 @@
     dark = true
     side-by-side = true
     line-numbers = true
+    hunk-header-decoration-style = none
