@@ -1,4 +1,7 @@
 -- send buffer to tmux
+-- Put your cursor over the text you want to send and type:
+-- ctrl-c ctrl-c
+
 return {
 	"jpalardy/vim-slime",
     config = function()
