@@ -3,7 +3,7 @@ theme = rose-pine
 
 # font
 font-family = "VictorMono NFM SemiBold"
-font-size = 14
+font-size = 15
 
 # icon (?)
 macos-icon = custom-style
