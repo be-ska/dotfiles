@@ -41,6 +41,7 @@ ALIGN_FW="/Users/luca/Library/CloudStorage/GoogleDrive-luca@alignmachines.com/My
 
 # aliases
 alias me="MAVExplorer.py"
+alias me_dev="/Users/luca/.pyenv/versions/3.13.0/bin/MAVExplorer.py"
 alias cd="z"
 alias mp="~/.pyenv/shims/python3.10 ~/code/util/serial-mavproxy.py"
 alias gpu_disable="sudo pmset -b gpuswitch 0"
