@@ -4,6 +4,8 @@ return {
     init = function()
         -- Disable tab mapping BEFORE plugin loads
         vim.g.augment_disable_tab_mapping = true
+        -- Enable autocomplete
+        vim.g.augment_disable_completions = true
         -- fetch current folder and add to workspace
         vim.g.augment_workspace_folders = { vim.fn.getcwd() }
         -- vim.g.augment_workspace_folders = {'~/code/dotfiles'}
