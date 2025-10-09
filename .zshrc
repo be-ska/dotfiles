@@ -25,10 +25,6 @@ export PATH="/Applications/Arm/bin:$PATH"
 # Flight Gear simulator for ArduPilot
 export PATH="/Applications/FlightGear.app/Contents/MacOS:$PATH"
 
-# gazebo for ArduPilot
-export GZ_SIM_SYSTEM_PLUGIN_PATH=$HOME/code/uav/gz_ws/src/ardupilot_gazebo/build:${GZ_SIM_SYSTEM_PLUGIN_PATH}
-export GZ_SIM_RESOURCE_PATH=$HOME/code/uav/gz_ws/src/ardupilot_gazebo/models:$HOME/code/uav/gz_ws/src/ardupilot_gazebo/worlds:${GZ_SIM_RESOURCE_PATH} 
-
 # pio
 export PATH="$PATH:$HOME/.platformio/penv/bin/"
 
