@@ -9,7 +9,10 @@ opt.tabstop = 4
 opt.softtabstop = 4
 opt.shiftwidth = 4
 opt.expandtab = true
-opt.smartindent = true
+
+-- keep only dumb indent
+opt.smartindent = false
+vim.cmd('filetype indent off')
 
 -- do not wrap (go to new line)
 opt.wrap = false
