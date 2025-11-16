@@ -34,6 +34,7 @@ ALIGN_LOGS="/Users/luca/Library/CloudStorage/GoogleDrive-luca@alignmachines.com/
 ALIGN_FW="/Users/luca/Library/CloudStorage/GoogleDrive-luca@alignmachines.com/My Drive/Align Software/最新版飛控韌體更新檔案 Flight Controller Firmware"
 
 # aliases
+alias sitl='./Tools/autotest/sim_vehicle.py -v Copter --console --map --mavproxy-args "--load-module horizon,graph"'
 alias me="MAVExplorer.py"
 alias me_dev="/Users/luca/.pyenv/versions/3.13.0/bin/MAVExplorer.py"
 alias cd="z"
