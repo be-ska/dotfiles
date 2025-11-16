@@ -17,6 +17,9 @@ vim.cmd('filetype indent off')
 -- do not wrap (go to new line)
 opt.wrap = false
 
+-- no mouse
+opt.mouse = ""
+
 opt.swapfile = false
 opt.backup = false
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
