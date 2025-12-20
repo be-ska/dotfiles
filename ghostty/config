@@ -9,3 +9,9 @@ font-size = 15
 macos-icon = custom-style
 macos-icon-ghost-color = BCBEC4
 macos-icon-screen-color = 26233A 
+
+# disable ligatures
+font-feature = -liga, -calt, -dlig
+
+# fix cmd+
+keybind = cmd+BracketRight=increase_font_size:1
