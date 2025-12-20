@@ -14,7 +14,7 @@ return {
         config = function()
             require('mason-lspconfig').setup({
                 -- Replace the language servers listed here with the ones you want to install
-                ensure_installed = { 'clangd', 'lua_ls', 'ltex', 'lemminx', 'yamlls', 'biome', 'pylsp', 'ruff' },
+                ensure_installed = { 'clangd', 'lua_ls', 'ltex', 'lemminx', 'yamlls', 'biome', 'pyright', 'ruff' },
                 handlers = {
                     function(server_name)
                         require('lspconfig')[server_name].setup({})
@@ -82,6 +82,11 @@ return {
                 sources = {
                     { name = 'nvim_lsp' },
                 },
+                mapping = cmp.mapping.preset.insert({
+                    ['<C-Space>'] = cmp.mapping.complete(),
+                    ['<C-e>'] = cmp.mapping.abort(),
+                    ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+                }),
             })
         end
     }
