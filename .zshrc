@@ -43,6 +43,8 @@ alias gpu_disable="sudo pmset -b gpuswitch 0"
 alias gpu_enable="sudo pmset -b gpuswitch 2"
 alias di="say -v Alice"
 alias ls="eza"
+alias vi="nvim"
+alias py="python3"
 
 export STM32CubeMX_PATH=/Applications/STMicroelectronics/STM32CubeMX.app/Contents/Resources
 
