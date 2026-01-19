@@ -54,3 +54,8 @@ autoload -Uz compinit
 compinit
 # End of Docker CLI completions
 
+# Run tmux at startup in ~/code
+if [[ -z "$TMUX" ]]; then
+    cd code
+    tmux attach || tmux
+fi
