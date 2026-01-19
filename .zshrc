@@ -1,6 +1,14 @@
 ## zsh config
 autoload -U compinit && compinit
 eval "$(zoxide init zsh)"
+
+# zsh git status
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats ' %F{blue}[%b]%f'
+setopt PROMPT_SUBST
+PROMPT='%F{green}%(3~|%2~|%~)%f${vcs_info_msg_0_} %F{yellow}%f '
+
 # zsh autocomplete (up and down arrows to scroll history)
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey "^[[A" history-beginning-search-backward
