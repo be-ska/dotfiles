@@ -4,6 +4,8 @@ theme = Rose Pine
 # font
 font-family = "VictorMono NFM SemiBold"
 font-size = 15
+font-style-italic = false
+font-style-bold-italic = false
 
 # icon (?)
 macos-icon = custom-style
