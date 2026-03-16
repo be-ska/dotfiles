@@ -40,6 +40,7 @@ source ~/.zsh_secrets
 # variables
 ALIGN_LOGS="/Users/luca/Library/CloudStorage/GoogleDrive-luca@alignmachines.com/.shortcut-targets-by-id/1avRPfwfaWKzqSPMQn_9x6zymX4clPOGE/Pilot Testing 廠機手相關/FlightLog"
 ALIGN_FW="/Users/luca/Library/CloudStorage/GoogleDrive-luca@alignmachines.com/My Drive/Align Software/最新版飛控韌體更新檔案 Flight Controller Firmware"
+IDF_PATH="/Users/luca/code/esp-idf/"
 
 # aliases
 alias sitl='./Tools/autotest/sim_vehicle.py -v Copter --console --map --mavproxy-args "--load-module horizon,graph"'
