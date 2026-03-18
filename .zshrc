@@ -1,3 +1,9 @@
+# Run tmux at startup in ~/code
+if [[ -z "$TMUX" ]]; then
+    cd code
+    tmux attach || tmux
+fi
+
 ## zsh config
 autoload -U compinit && compinit
 eval "$(zoxide init zsh)"
@@ -65,8 +71,8 @@ autoload -Uz compinit
 compinit
 # End of Docker CLI completions
 
-# Run tmux at startup in ~/code
-if [[ -z "$TMUX" ]]; then
-    cd code
-    tmux attach || tmux
-fi
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+export STM32_PRG_PATH=/Applications/STMicroelectronics/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs/bin
