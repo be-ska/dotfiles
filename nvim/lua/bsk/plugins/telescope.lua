@@ -1,7 +1,7 @@
 return {
     {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.8',
+        tag = '0.2.1',
         dependencies = {
             "nvim-lua/plenary.nvim",
             "BurntSushi/ripgrep"
@@ -11,6 +11,11 @@ return {
             vim.keymap.set('n', '<leader>tf', builtin.find_files, { desc = 'Telescope find files' })
             vim.keymap.set('n', '<leader>tt', builtin.git_files, { desc = 'Telescope find files only in repo' })
             vim.keymap.set('n', '<leader>ts', builtin.live_grep, { desc = 'Telescope search text in files' })
+            vim.keymap.set('v', '<leader>ts', function()
+                vim.cmd('noau normal! "vy"')
+                local text = vim.fn.getreg('v')
+                builtin.live_grep({ default_text = text })
+            end, { desc = 'Telescope search selected text' })
 
             require('telescope').setup({
                 pickers = {
