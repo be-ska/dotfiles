@@ -7,10 +7,9 @@ font-size = 15
 font-style-italic = false
 font-style-bold-italic = false
 
-# icon (?)
-macos-icon = custom-style
-macos-icon-ghost-color = BCBEC4
-macos-icon-screen-color = 26233A 
+# icon
+macos-custom-icon = ~/.config/ghostty/ghostty-catppuccin-mocha.icns
+macos-icon = custom
 
 # disable ligatures
 font-feature = -liga, -calt, -dlig
