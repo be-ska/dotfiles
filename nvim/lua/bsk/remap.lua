@@ -3,7 +3,6 @@ vim.g.mapleader = " "
 ---
 --- File manager
 -- e: file expoler
-vim.keymap.set("n", "<leader>e", function() require("mini.files").open() end)
 --
 --- Telescope (after/plugin/telescope)
 -- tt: Telescope find git
