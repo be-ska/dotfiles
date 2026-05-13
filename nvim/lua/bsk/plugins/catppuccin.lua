@@ -7,9 +7,9 @@ return {
                 light = "latte",
                 dark = "mocha",
                 },
-                transparent_background = false, -- disables setting the background color.
+                transparent_background = true, -- disables setting the background color.
                 float = {
-                transparent = false, -- enable transparent floating windows
+                transparent = true, -- enable transparent floating windows
                 solid = false, -- use solid styling for floating windows, see |winborder|
                 },
                 term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
@@ -56,7 +56,13 @@ return {
                     },
                 },
                 color_overrides = {},
-                custom_highlights = {},
+                custom_highlights = function(colors)
+                    local darken = require("catppuccin.utils.colors").darken
+                    return {
+                        diffAdded   = { fg = colors.green, bg = darken(colors.green, 0.18, colors.base) },
+                        diffRemoved = { fg = colors.red,   bg = darken(colors.red,   0.18, colors.base) },
+                    }
+                end,
                 default_integrations = true,
                 auto_integrations = false,
                 integrations = {
