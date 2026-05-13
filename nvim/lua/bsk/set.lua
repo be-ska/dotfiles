@@ -40,3 +40,6 @@ opt.updatetime = 50
 
 -- load cfilter plugin at startup
 vim.cmd('packadd cfilter')
+
+-- prevent Vim modeline misfire
+vim.opt.modeline = false
