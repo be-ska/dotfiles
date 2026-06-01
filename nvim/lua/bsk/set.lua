@@ -20,6 +20,9 @@ opt.wrap = false
 -- no mouse
 opt.mouse = ""
 
+-- use system clipboard for all yank/delete/paste
+opt.clipboard = "unnamedplus"
+
 opt.swapfile = false
 opt.backup = false
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"

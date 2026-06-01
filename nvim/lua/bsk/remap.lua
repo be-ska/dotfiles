@@ -35,17 +35,9 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<leader>zig", "<cmd>LspRestart<cr>")
 
--- yanks go in the system clipboard if prefixed by the leader key
-vim.keymap.set('n', '<leader>y', '\"+y')
-vim.keymap.set('v', '<leader>y', '\"+y')
-vim.keymap.set('n', '<leader>Y', '\"+Y')
-
 -- copy file path to system clipboard
-vim.keymap.set('n', '<leader>yp', [[:let @+ = expand('%p')<CR>]]) -- relative path
-vim.keymap.set('n', '<leader>yP', [[:let @+ = expand('%:p')<CR>]]) -- full path
-
--- paste from system clipboard
-vim.keymap.set('n', '<leader>p', '\"+p')
+vim.keymap.set('n', 'yp', [[:let @+ = expand('%p')<CR>]]) -- relative path
+vim.keymap.set('n', 'yP', [[:let @+ = expand('%:p')<CR>]]) -- full path
 
 -- paste over a selection without yanking
 vim.keymap.set('v', "p", '\"_dp')
