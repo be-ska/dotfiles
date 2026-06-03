@@ -1,0 +1,19 @@
+# smart enter
+[[mgr.prepend_keymap]]
+on   = "<Enter>"
+run  = "plugin smart-enter"
+desc = "Enter the directory, or open the file"
+
+# keymap for bookmarks
+[[mgr.prepend_keymap]]
+on = ["g", "H"]
+run = "cd '~/Library/CloudStorage/GoogleDrive-luca@alignmachines.com/My Drive/Hardware'"
+desc = "Go to Hardware"
+[[mgr.prepend_keymap]]
+on = ["g", "I"]
+run = "cd '~/Library/Mobile Documents/com~apple~CloudDocs'"
+desc = "Go to iCloud"
+[[mgr.prepend_keymap]]
+on = ["g", "A"]
+run = "cd ~/Library/CloudStorage/Dropbox"
+desc = "Go to Aelettronica Dropbox"
