@@ -63,14 +63,13 @@ alias me="MAVExplorer.py"
 alias me_dev="/Users/luca/.pyenv/versions/3.13.0/bin/MAVExplorer.py"
 alias cd="z"
 alias mp="python ~/code/util/serial-mavproxy.py"
-alias gpu_disable="sudo pmset -b gpuswitch 0"
-alias gpu_enable="sudo pmset -b gpuswitch 2"
 alias di="say -v Alice"
 alias ls="eza"
 alias vi="nvim"
 alias g="nvim +Git +only"
 alias py="python3"
 alias f="yazi"
+alias ccc="claude"
 
 export STM32CubeMX_PATH=/Applications/STMicroelectronics/STM32CubeMX.app/Contents/Resources
 
