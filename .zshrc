@@ -54,6 +54,8 @@ ALIGN_LOGS="/Users/luca/Library/CloudStorage/GoogleDrive-luca@alignmachines.com/
 ALIGN_FW="/Users/luca/Library/CloudStorage/GoogleDrive-luca@alignmachines.com/My Drive/Align Software/最新版飛控韌體更新檔案 Flight Controller Firmware"
 HARDWARE="/Users/luca/Library/CloudStorage/GoogleDrive-luca@alignmachines.com/My Drive/Hardware"
 IDF_PATH="/Users/luca/code/esp-idf"
+ICLOUD="/Users/luca/Library/Mobile Documents/com~apple~CloudDocs"
+AESPD="/Users/luca/Library/CloudStorage/Dropbox"
 
 # aliases
 alias sitl='./Tools/autotest/sim_vehicle.py -v Copter --console --map --mavproxy-args "--load-module horizon,graph"'
