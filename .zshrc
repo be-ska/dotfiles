@@ -23,6 +23,9 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 
+# fzf shell integration (Ctrl-R history search, Ctrl-T files, Alt-C cd)
+source <(fzf --zsh)
+
 # homebrew local path
 export PATH=/usr/local/bin:$PATH
 
