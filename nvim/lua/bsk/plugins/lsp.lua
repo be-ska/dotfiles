@@ -17,7 +17,7 @@ return {
                 ensure_installed = { 'clangd', 'lua_ls', 'ltex', 'lemminx', 'yamlls', 'biome', 'pyright', 'ruff' },
                 handlers = {
                     function(server_name)
-                        require('lspconfig')[server_name].setup({})
+                        vim.lsp.enable(server_name)
                     end,
                 },
             })
@@ -27,14 +27,11 @@ return {
         -- handle communication between LSP and nvim
         "neovim/nvim-lspconfig",
         config = function()
-            -- Add cmp_nvim_lsp capabilities settings to lspconfig
-            -- This should be executed before you configure any language server
-            local lspconfig_defaults = require('lspconfig').util.default_config
-            lspconfig_defaults.capabilities = vim.tbl_deep_extend(
-                'force',
-                lspconfig_defaults.capabilities,
-                require('cmp_nvim_lsp').default_capabilities()
-            )
+            -- Add cmp_nvim_lsp capabilities to every language server.
+            -- This should be executed before you configure any language server.
+            vim.lsp.config('*', {
+                capabilities = require('cmp_nvim_lsp').default_capabilities(),
+            })
 
             -- LspAttach apply keybindings after a language server has attached to a given buffer
             vim.api.nvim_create_autocmd('LspAttach', {
