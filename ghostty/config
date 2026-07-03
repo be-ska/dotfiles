@@ -2,8 +2,8 @@
 theme = Catppuccin Mocha
 
 # transparency
-background-opacity = 0.9
-background-blur-radius = 20
+#background-opacity = 0.9
+#background-blur-radius = 20
 
 # font
 font-family = "VictorMono NFM SemiBold"
