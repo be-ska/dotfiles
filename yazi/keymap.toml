@@ -17,3 +17,7 @@ desc = "Go to iCloud"
 on = ["g", "A"]
 run = "cd ~/Library/CloudStorage/Dropbox"
 desc = "Go to Aelettronica Dropbox"
+[[mgr.prepend_keymap]]
+on = ["g", "G"]
+run = "cd ~/Library/CloudStorage/GoogleDrive-luca@alignmachines.com/My Drive"
+desc = "Go to Align Google Drive"
