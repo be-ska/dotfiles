@@ -1,8 +1,8 @@
 local opt = vim.opt
 
--- show both line numbers and relative numbers
+-- line numbers and relative numbers
 opt.number = true
-opt.relativenumber = true
+opt.relativenumber = false
 
 -- spacing
 opt.tabstop = 4
