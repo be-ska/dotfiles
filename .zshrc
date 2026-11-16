@@ -46,25 +46,21 @@ export PATH="/Applications/FlightGear.app/Contents/MacOS:$PATH"
 # pio
 export PATH="$PATH:$HOME/.platformio/penv/bin/"
 
-# source .zsh_secrets
-source ~/.zsh_secrets
-
 # variables
-ALIGN_LOGS="/Users/luca/Library/CloudStorage/GoogleDrive-luca@alignmachines.com/.shortcut-targets-by-id/1avRPfwfaWKzqSPMQn_9x6zymX4clPOGE/Pilot Testing 廠機手相關/FlightLog"
-ALIGN_FW="/Users/luca/Library/CloudStorage/GoogleDrive-luca@alignmachines.com/My Drive/Align Software/最新版飛控韌體更新檔案 Flight Controller Firmware"
-HARDWARE="/Users/luca/Library/CloudStorage/GoogleDrive-luca@alignmachines.com/My Drive/Hardware"
-IDF_PATH="/Users/luca/code/esp-idf"
-ICLOUD="/Users/luca/Library/Mobile Documents/com~apple~CloudDocs"
-AESPD="/Users/luca/Library/CloudStorage/Dropbox"
+ALIGN_LOGS="$HOME/Library/CloudStorage/GoogleDrive-luca@alignmachines.com/.shortcut-targets-by-id/1avRPfwfaWKzqSPMQn_9x6zymX4clPOGE/Pilot Testing 廠機手相關/FlightLog"
+ALIGN_DRIVE="$HOME/Library/CloudStorage/GoogleDrive-luca@alignmachines.com/My Drive"
+IDF_PATH="$HOME/code/esp-idf"
+ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
+AESPD="$HOME/Library/CloudStorage/Dropbox"
 
 # aliases
 alias sitl='./Tools/autotest/sim_vehicle.py -v Copter --console --map --mavproxy-args "--load-module horizon,graph"'
 alias me="MAVExplorer.py"
-alias me_dev="/Users/luca/.pyenv/versions/3.13.0/bin/MAVExplorer.py"
 alias cd="z"
 alias mp="python ~/code/util/serial-mavproxy.py"
 alias di="say -v Alice"
 alias ls="eza"
+alias lsd="eza -l --sort date"
 alias vi="nvim"
 alias g="nvim +Git +only"
 alias py="python3"
@@ -74,14 +70,9 @@ alias ccc="claude"
 export STM32CubeMX_PATH=/Applications/STMicroelectronics/STM32CubeMX.app/Contents/Resources
 
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
-# fpath=(/Users/luca/.docker/completions $fpath)
+# fpath=($HOME/.docker/completions $fpath)
 # autoload -Uz compinit
 # compinit
-
-# nvm
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-# [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 export STM32_PRG_PATH=/Applications/STMicroelectronics/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs/bin
 
