@@ -46,8 +46,8 @@ return {
                     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
                     vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, opts)
                     vim.keymap.set('n', 'ge', vim.diagnostic.open_float, opts)
-                    vim.keymap.set('n', 'gn', vim.diagnostic.goto_next, opts)
-                    vim.keymap.set('n', 'gp', vim.diagnostic.goto_prev, opts)
+                    vim.keymap.set('n', 'gn', function() vim.diagnostic.jump({ count = 1, float = true }) end, opts)
+                    vim.keymap.set('n', 'gp', function() vim.diagnostic.jump({ count = -1, float = true }) end, opts)
                 end,
             })
         end
