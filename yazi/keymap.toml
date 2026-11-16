@@ -4,6 +4,18 @@ on   = "<Enter>"
 run  = "plugin smart-enter"
 desc = "Enter the directory, or open the file"
 
+# reveal in Finder
+[[mgr.prepend_keymap]]
+on   = "o"
+run  = 'shell -- open -R "$0"'
+desc = "Reveal in Finder"
+
+# copy file(s) to system clipboard
+[[mgr.prepend_keymap]]
+on   = ["c", "C"]
+run  = '''shell -- osascript -l JavaScript -e 'ObjC.import("AppKit"); function run(a) { const u = $.NSMutableArray.array; a.forEach(p => u.addObject($.NSURL.fileURLWithPath(p))); const pb = $.NSPasteboard.generalPasteboard; pb.clearContents; pb.writeObjects(u) }' "$@"'''
+desc = "Copy file(s) to system clipboard"
+
 # keymap for bookmarks
 [[mgr.prepend_keymap]]
 on = ["g", "H"]
