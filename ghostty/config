@@ -17,6 +17,3 @@ macos-icon = custom
 
 # disable ligatures
 font-feature = -liga, -calt, -dlig
-
-# fix cmd+
-keybind = cmd+BracketRight=increase_font_size:1
