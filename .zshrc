@@ -58,6 +58,7 @@ alias sitl='./Tools/autotest/sim_vehicle.py -v Copter --console --map --mavproxy
 alias me="MAVExplorer.py"
 alias cd="z"
 alias mp="python ~/code/util/serial-mavproxy.py"
+alias crash="python ~/code/util/log-crash-detector.py"
 alias di="say -v Alice"
 alias ls="eza"
 alias lsd="eza -l --sort date"
