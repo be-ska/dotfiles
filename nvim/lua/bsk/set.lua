@@ -44,5 +44,9 @@ opt.updatetime = 50
 -- load cfilter plugin at startup
 vim.cmd('packadd cfilter')
 
+-- disable the python3 provider: its detection runs on every python buffer
+-- (via ftplugin/python.vim) and costs ~2s; no plugin here needs it
+vim.g.loaded_python3_provider = 0
+
 -- prevent Vim modeline misfire
 vim.opt.modeline = false
