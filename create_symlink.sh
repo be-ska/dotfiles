@@ -8,9 +8,12 @@ SOURCE_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 SYMLINKS=(
     ".tmux.conf:$HOME/.tmux.conf"
     ".zshrc:$HOME/.zshrc"
+    ".gitconfig:$HOME/.gitconfig"
     "nvim:$HOME/.config/nvim"
     "ghostty:$HOME/.config/ghostty"
     "yazi:$HOME/.config/yazi"
+    "aerospace:$HOME/.config/aerospace"
+    "bin/fgfs:$HOME/.local/bin/fgfs"
 )
 
 echo "Creating symlinks from $SOURCE_DIR..."
@@ -41,6 +44,28 @@ for pair in "${SYMLINKS[@]}"; do
 
     echo "Link    $link -> $target"
     ln -s "$link" "$target"
+done
+
+# Shortcut links to locations outside the repo ("source:target" pairs)
+GDRIVE_ROOT="$HOME/Library/CloudStorage/GoogleDrive-luca@alignmachines.com"
+SHORTCUTS=(
+    "$GDRIVE_ROOT/My Drive:$HOME/gdrive"
+    "$GDRIVE_ROOT/.shortcut-targets-by-id/1avRPfwfaWKzqSPMQn_9x6zymX4clPOGE/Pilot Testing 廠機手相關/FlightLog:$HOME/align-logs"
+    "$HOME/Library/Mobile Documents/com~apple~CloudDocs:$HOME/icloud"
+)
+
+for pair in "${SHORTCUTS[@]}"; do
+    src="${pair%%:*}"
+    target="${pair#*:}"
+
+    if [ -L "$target" ] && [ "$(readlink "$target")" = "$src" ]; then
+        echo "OK   $target"
+    elif [ -e "$target" ] || [ -L "$target" ]; then
+        echo "Skip    $target already exists"
+    else
+        echo "Link    $src -> $target"
+        ln -s "$src" "$target"
+    fi
 done
 
 echo "All symlinks created successfully!"
