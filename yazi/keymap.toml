@@ -19,11 +19,11 @@ desc = "Copy file(s) to system clipboard"
 # keymap for bookmarks
 [[mgr.prepend_keymap]]
 on = ["g", "H"]
-run = "cd '~/Library/CloudStorage/GoogleDrive-luca@alignmachines.com/My Drive/Hardware'"
+run = "cd ~/gdrive/Hardware"
 desc = "Go to Hardware"
 [[mgr.prepend_keymap]]
 on = ["g", "I"]
-run = "cd '~/Library/Mobile Documents/com~apple~CloudDocs'"
+run = "cd ~/icloud"
 desc = "Go to iCloud"
 [[mgr.prepend_keymap]]
 on = ["g", "A"]
@@ -31,5 +31,5 @@ run = "cd ~/Library/CloudStorage/Dropbox"
 desc = "Go to Aelettronica Dropbox"
 [[mgr.prepend_keymap]]
 on = ["g", "G"]
-run = "cd ~/Library/CloudStorage/GoogleDrive-luca@alignmachines.com/My Drive"
+run = "cd ~/gdrive"
 desc = "Go to Align Google Drive"
