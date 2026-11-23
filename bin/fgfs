@@ -1,0 +1,4 @@
+#!/bin/sh
+# macOS FlightGear ships the simulator as "FlightGear"; ArduPilot scripts expect fgfs.
+# Not a plain symlink: OSG resolves its plugins relative to the launch path.
+exec /Applications/FlightGear.app/Contents/MacOS/FlightGear "$@"
